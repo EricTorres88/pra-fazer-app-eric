@@ -2,7 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import styles from './style'
 
-export default function Login({ navigation }) {
+export default function Login() {
     let errorLogin = null
 
     return (
@@ -28,8 +28,7 @@ export default function Login({ navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={styles.buttonCreate}
-                onPress={() => navigation.navigate('CreateUser')}
+                style={styles.buttonCreate} onPress={() => navigation.navigate('CreateUser')}
             >
                 <Text style={styles.buttonCreateText}>Criar Usuário</Text>
             </TouchableOpacity>
