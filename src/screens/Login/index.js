@@ -2,7 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import React from 'react'
 import styles from './style'
 
-export default function Login() {
+export default function Login({ navigation }) {
     let errorLogin = null
 
     return (

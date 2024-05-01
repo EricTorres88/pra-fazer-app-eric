@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         fontSize: 18,
         borderRadius: 10,
-        backgroundColor: '#F60',
+        backgroundColor: '#FFF',
         padding: 20,
         marginBottom: 20,
         width: '90%'
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 10,
         marginBottom: 20,
-        width: '30%'
+        width: '60%'
     },
     textButton: {
         fontSize: 24,
