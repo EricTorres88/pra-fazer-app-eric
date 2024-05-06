@@ -16,19 +16,20 @@ const styles = StyleSheet.create({
         marginBottom: 20,
     },
     input: {
+        alignItems: 'center',
         fontSize: 18,
         borderRadius: 10,
         backgroundColor: '#FFF',
         padding: 20,
         marginBottom: 20,
-        width: '100%'
+        width: '90%'
     },
     button: {
         backgroundColor: '#070A52',
         padding: 10,
         borderRadius: 10,
         marginBottom: 20,
-        width: '100%'
+        width: '60%'
     },
     textButton: {
         fontSize: 24,

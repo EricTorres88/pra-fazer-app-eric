@@ -1,3 +1,4 @@
+import 'react-native-gesture-handler';
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -27,8 +28,9 @@ export default function App() {
                 <Stack.Screen name="CreateUser" component={CreateUser} 
                 options={{title: 'Cadastro de Usuário'}} />
 
-                <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
+                {/*<Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />*/}
 
+                <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
             </Stack.Navigator>
         </NavigationContainer>
     );

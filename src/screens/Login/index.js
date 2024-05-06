@@ -28,8 +28,7 @@ export default function Login({ navigation }) {
             </TouchableOpacity>
 
             <TouchableOpacity
-                style={styles.buttonCreate}
-                onPress={() => navigation.navigate('CreateUser')}
+                style={styles.buttonCreate} onPress={() => navigation.navigate('CreateUser')}
             >
                 <Text style={styles.buttonCreateText}>Criar Usuário</Text>
             </TouchableOpacity>
