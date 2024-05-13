@@ -1,30 +1,45 @@
 import { firebase } from '../../services/firebaseConfig'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { View, Text, TextInput, TouchableOpacity, Image } from 'react-native'
 import React, { useState } from 'react'
-import React from 'react'
+//import React from 'react'
 import styles from './style'
 
 export default function Login({ navigation }) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [errorLogin, setErrorLogin] = useState("null")
+    const [errorLogin, setErrorLogin] = useState(null)
 
-    function validate(){
-        if(email == ""){
+    function validate() {
+        if (email == "") {
             setErrorLogin("Informe um e-mail!")
-        }else if(password == ""){
+        } else if (password == "") {
             setErrorLogin("Informe uma senha!")
-        }else{
+        } else {
             setErrorLogin(null)
+            login()
         }
     }
 
+    function login() {
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                navigation.navigate('Tabs')
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                setErrorLogin(errorMessage)
+            });
+    }
     return (
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../../../assets/logo_pra_fazer.png')} />
 
-            { errorLogin != null && (
-                <Text style={styles.alert}>{ errorLogin }</Text>
+            {errorLogin != null && (
+                <Text style={styles.alert}>{errorLogin}</Text>
             )}
 
             <TextInput
@@ -39,11 +54,11 @@ export default function Login({ navigation }) {
                 placeholder='Senha'
                 value={password}
                 onChangeText={setPassword}
-                secureTextEntry= {true}
+                secureTextEntry={true}
             />
 
-            <TouchableOpacity style={styles.button} 
-            onPress={validate}
+            <TouchableOpacity style={styles.button}
+                onPress={validate}
             >
                 <Text style={styles.textButton}>Entrar</Text>
             </TouchableOpacity>
