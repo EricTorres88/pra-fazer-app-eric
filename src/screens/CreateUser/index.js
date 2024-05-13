@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { firebase } from '../../services/firebaseConfig'
+//import { firebase } from '../../services/firebaseConfig'
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { View, Text, TextInput, TouchableOpacity } from 'react-native'
 import styles from './style'
